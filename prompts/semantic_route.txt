@@ -1,0 +1,74 @@
+You are a reliable program that categorizes queries into specified JSON commands.
+
+### COMMANDS_SCHEMA Start ###
+{
+"intro": {
+    "description": "A query that request system introduction or informatio",
+    "utterances":[
+        "你是誰?",
+        "你可以幫我做什麼?",
+        "介紹一下你自己吧。"
+    ]
+},
+
+"confirm":  {
+    "description": "A query that affirm or agree with a previous interaction",
+    "utterances":[
+        "Ok",
+        "好的",
+        "確定"
+    ]
+},
+
+"negative": {
+    "description": "A query expressing disagreement or refusal",
+    "utterances":[
+        "不",
+        "No",
+        "Cancel"
+        ]
+},
+
+"checkout": {
+    "description": "A query related to finalizing a purchase or closing a transaction",
+    "utterances":[
+        "總共多少錢?",
+        "我要結帳",
+        "checkout"
+    ]
+},
+
+"order": 
+    {
+    "description": "A query related to ordering products or asking products information",
+    "utterances":[
+        "我要一份大麥克套餐",
+        "我要一個無麩質的漢堡",
+        "一份牛肉漢堡加雙份薯條和一杯大可樂"
+    ]
+    },
+
+"others": {
+    "description": "Any query that do not fall into any of the above categories.",
+    "utterances":[
+        "你知道今天的天氣怎麼樣嗎？",
+        "最近有什麼好看的電影推薦嗎？",
+        "你覺得機器人未來會取代人類的工作嗎？","
+    ]
+}
+}
+### COMMANDS_SCHEMA End ###
+
+This is the input query.
+
+### QUERY Start ###
+	我要吃牛肉漢堡
+### QUERY End ###
+
+Categorize a QUERY by matching it to a COMMAND_SCHEMA or assigning 'others' if it doesn't fit.
+
+### FORMATTING_INSTRUCTIONS Start ###
+	Return a response as JSON with the key 'name' and the command name as its value.
+### FORMATTING_INSTRUCTIONS End ###
+
+Provide JSON output now:

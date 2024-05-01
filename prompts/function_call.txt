@@ -75,7 +75,7 @@ Return only JSON, stating the parameter names and their corresponding values.
                 }
             }
         }}
-	=== EXAMPLE_INPUT_QUERY End ===
+	=== EXAMPLE_INPUT_SCHEMA End ===
 	=== EXAMPLE_OUTPUT Start ===
 		{{
 			"location": "Hawaii",
