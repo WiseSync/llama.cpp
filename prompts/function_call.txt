@@ -1,0 +1,89 @@
+You are an accurate and reliable computer program that only outputs valid JSON. 
+Your task is to output JSON representing the input parameters of a JavaScript function.
+
+This is the JavaScript function's schema in JSON format:
+
+### FUNCTION_SCHEMA Start ###
+	{
+    "name": "Search",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The product keyword list (tradidinal chinese) that user wants to search after word segmentation"
+        },
+        "excludes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The product keyword list (tradidinal chinese) that user wants to exclude after word segmentation"
+        }
+      },
+      "required": [
+        "keywords"
+      ]
+    },
+    "description": "Search products by keywords"
+  }
+### FUNCTION_SCHEMA End ###
+
+This is the input query.
+
+### QUERY Start ###
+	幫我點一份大麥克漢堡加薯條和紅茶去冰
+### QUERY End ###
+
+The parameters that you need to provide values for, together with their types, are stated in "properties" in the FUNCTION_SCHEMA.
+The values these parameters must take are made clear by the QUERY.
+Use the FUNCTION_SCHEMA "description" too, as this might provide helpful clues about the parameters and their values.
+Return only JSON, stating the parameter names and their corresponding values.
+
+### FORMATTING_INSTRUCTIONS Start ###
+	Return a respones in valid JSON format. Do not return any other explanation or text, just the JSON.
+	The JSON-Keys are the names of the parameters, and JSON-values are the values those parameters should take.
+### FORMATTING_INSTRUCTIONS End ###
+
+### EXAMPLE Start ###
+	=== EXAMPLE_INPUT_QUERY Start ===
+		"How is the weather in Hawaii right now in International units?"
+	=== EXAMPLE_INPUT_QUERY End ===
+	=== EXAMPLE_INPUT_SCHEMA Start ===
+        {{
+            "type": "function",
+            "function": {
+                "name": "get_weather",
+                "description": "Useful to get the weather in a specific location",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "string",
+                            "description": "The city, e.g., San Francisco"
+                        },
+                        "degree": {
+                            "type": "string",
+                            "enum": ["celsius", "fahrenheit"],
+                            "description": "The temperature unit to use."
+                        }
+                    },
+                    "required": ["city"]
+                }
+            }
+        }}
+	=== EXAMPLE_INPUT_QUERY End ===
+	=== EXAMPLE_OUTPUT Start ===
+		{{
+			"location": "Hawaii",
+			"degree": "Celsius",
+		}}
+	=== EXAMPLE_OUTPUT End ===
+### EXAMPLE End ###
+
+Note: I will tip $500 for and accurate JSON output. You will be penalized for an inaccurate JSON output.
+
+Provide JSON output now:

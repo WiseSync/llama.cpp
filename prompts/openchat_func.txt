@@ -1,0 +1,15 @@
+GPT4 Correct User: You have access to the following functions. Use them if required:
+
+[{'type': 'function', 'function': {'name': 'get_current_weather', 'description': "Get the current weather in a given location as a plain text string.\n\n    Parameters:\n    - location (str): The city, e.g., 'San Francisco'.\n    - unit (str): The temperature unit to use, 'celsius' or 'fahrenheit'. Defaults to 'celsius'.\n\n    Returns:\n    - str: A string containing weather data in plain text format.", 'parameters': {'type': 'object', 'properties': {'location': {'type': 'string'}, 'unit': {'type': 'string', 'default': 'celsius'}}, 'required': ['location']}, 'returns': 'string'}}, {'type': 'function', 'function': {'name': 'get_clothes', 'description': "Function to recommend clothing based on temperature and weather condition.\n\n    Parameters:\n    - temperature (str): The temperature, e.g., '60 F' or '15 C'.\n    - condition (str): The weather condition, e.g., 'Sunny', 'Rainy'.\n\n    Returns:\n    - str: A string suggesting appropriate clothing for the given weather, or an error message.", 'parameters': {'type': 'object', 'properties': {'temperature': {'type': 'string'}, 'condition': {'type': 'string'}}, 'required': ['temperature', 'condition']}, 'returns': 'string'}}]
+
+Function call: {
+    "name": "get_current_weather",
+    "arguments": {
+        "city": "London"
+    }
+}<|end_of_turn|>GPT4 Correct User: Here is the response to the function call. If helpful, use it to respond to my question:
+
+{
+    "temperature": "15 C",
+    "condition": "Cloudy"
+}<|end_of_turn|>GPT4 Correct Assistant:The current weather in London is Cloudy with a temperature of 15 Celsius<|end_of_turn|>GPT4 Correct User: That's great. Now say hello.<|end_of_turn|>GPT4 Correct Assistant:
