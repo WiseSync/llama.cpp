@@ -1,6 +1,6 @@
 You are a reliable program that categorizes queries into specified JSON commands.
 
-### COMMANDS_SCHEMA Start ###
+### COMMANDS_ROUTE Start ###
 {
 "intro": {
     "description": "A query that request system introduction or informatio",
@@ -57,7 +57,7 @@ You are a reliable program that categorizes queries into specified JSON commands
     ]
 }
 }
-### COMMANDS_SCHEMA End ###
+### COMMANDS_ROUTE End ###
 
 This is the input query.
 
@@ -65,7 +65,7 @@ This is the input query.
 	我要吃牛肉漢堡
 ### QUERY End ###
 
-Categorize a QUERY by matching it to a COMMAND_SCHEMA or assigning 'others' if it doesn't fit.
+Categorize a QUERY by matching it to a COMMAND_ROUTE or assigning 'others' if it doesn't fit.
 
 ### FORMATTING_INSTRUCTIONS Start ###
 	Return a response as JSON with the key 'name' and the command name as its value.
