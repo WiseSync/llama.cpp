@@ -234,12 +234,21 @@ if (GGML_METAL)
             OWNER_WRITE
             GROUP_READ
             WORLD_READ
-        DESTINATION ${CMAKE_INSTALL_BINDIR})
+        DESTINATION ${CMAKE_BINARY_DIR}/bin)
+
+    install(
+            FILES src/ggml-common.h
+            PERMISSIONS
+                OWNER_READ
+                OWNER_WRITE
+                GROUP_READ
+                WORLD_READ
+            DESTINATION ${CMAKE_BINARY_DIR}/bin)
 
     if (NOT GGML_METAL_EMBED_LIBRARY)
         install(
             FILES ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/default.metallib
-            DESTINATION ${CMAKE_INSTALL_BINDIR}
+            DESTINATION ${CMAKE_BINARY_DIR}/bin
         )
     endif()
 endif()
